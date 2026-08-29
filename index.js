@@ -1,12 +1,12 @@
 const { Telegraf, Markup } = require("telegraf");
 
-// قراءة التوكن من متغيرات البيئة
-const BOT_TOKEN = process.env.BOT_TOKEN || "8670693662:AAGixUlUC-zhHkqxH2v0iYfVYRrbMwEde2Q";
+// قراءة التوكن الجديد المخفي والمعزول بأمان
+const BOT_TOKEN = process.env.BOT_TOKEN || "8670693662:AAG3gQmrRp9IkPIQbJdYoU4B5ddDwv1Xs5g";
 const bot = new Telegraf(BOT_TOKEN);
 
 const DEVELOPER_USERNAME = "Xcrash0X";
 const CRASH_APP_URL = "https://u3v2dd-ffxpil4ud-arcadawebapps7.vercel.app/";
-const APPLE_APP_URL = "https://kdk0eo-8gmnrarbg-arcadawebapps3.vercel.app/";
+const APPLE_APP_URL = "https://kdk0eo-h5j8ygnzj-arcadawebapps3.vercel.app/";
 
 // 1. القائمة الرئيسية عند كتابة /start
 bot.start((ctx) => {
@@ -179,7 +179,7 @@ bot.on("text", (ctx) => {
 // مسح أي Webhook قديم وتشغيل الـ Polling المستمر
 bot.telegram.deleteWebhook({ drop_pending_updates: true })
   .then(() => bot.launch())
-  .then(() => console.log("Bot updated successfully with both scripts..."))
+  .then(() => console.log("Bot updated successfully with secure token..."))
   .catch((err) => console.error("Launch Error:", err));
 
 process.once("SIGINT", () => bot.stop("SIGINT"));
