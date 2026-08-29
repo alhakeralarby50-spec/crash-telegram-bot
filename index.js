@@ -5,7 +5,7 @@ const BOT_TOKEN = process.env.BOT_TOKEN || "8670693662:AAG3gQmrRp9IkPIQbJdYoU4B5
 const bot = new Telegraf(BOT_TOKEN);
 
 const DEVELOPER_USERNAME = "Xcrash0X";
-const CRASH_APP_URL = "https://u3v2dd-ffxpil4ud-arcadawebapps7.vercel.app/";
+const CRASH_APP_URL = "https://u3v2dd-1ih6kc9ki-arcadawebapps7.vercel.app/";
 const APPLE_APP_URL = "https://kdk0eo-h5j8ygnzj-arcadawebapps3.vercel.app/";
 
 // 1. القائمة الرئيسية عند كتابة /start
