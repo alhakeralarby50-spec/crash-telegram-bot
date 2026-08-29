@@ -6,7 +6,7 @@ const bot = new Telegraf(BOT_TOKEN);
 
 const DEVELOPER_USERNAME = "Xcrash0X";
 const CRASH_APP_URL = "https://u3v2dd-o1tk6d8qd-arcadawebapps7.vercel.app/";
-const APPLE_APP_URL = "https://kdk0eo-dyrk41azq-arcadawebapps3.vercel.app/";
+const APPLE_APP_URL = "https://kdk0eo-8gmnrarbg-arcadawebapps3.vercel.app/";
 
 // 1. القائمة الرئيسية عند كتابة /start
 bot.start((ctx) => {
