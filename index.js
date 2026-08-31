@@ -43,11 +43,11 @@ bot.action("buy_codes_crash", (ctx) => {
   return ctx.reply(
     "اختر باقة الأكواد التي تريد شراءها لإسكريبت الطيارة:",
     Markup.inlineKeyboard([
-      [Markup.button.url("كود 10 | 120eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_10`)],
-      [Markup.button.url("كود 20 | 210eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_20`)],
-      [Markup.button.url("كود 30 | 310eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_30`)],
-      [Markup.button.url("كود 40 | 400eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_40`)],
-      [Markup.button.url("كود 50 | 500eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_50`)],
+      [Markup.button.url("كود 10 | 200eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_10`)],
+      [Markup.button.url("كود 20 | 300eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_20`)],
+      [Markup.button.url("كود 30 | 400eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_30`)],
+      [Markup.button.url("كود 40 | 500eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_40`)],
+      [Markup.button.url("كود 50 | 550eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_50`)],
       [Markup.button.url("كود 60 | 590eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_60`)],
       [Markup.button.url("كود 70 | 690eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_70`)],
       [Markup.button.url("كود 80 | 790eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_80`)],
