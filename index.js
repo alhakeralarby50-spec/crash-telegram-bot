@@ -43,17 +43,17 @@ bot.action("buy_codes_crash", (ctx) => {
   return ctx.reply(
     "اختر باقة الأكواد التي تريد شراءها لإسكريبت الطيارة:",
     Markup.inlineKeyboard([
-      [Markup.button.url("كود 10 | 200eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_10`)],
-      [Markup.button.url("كود 20 | 300eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_20`)],
-      [Markup.button.url("كود 30 | 400eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_30`)],
-      [Markup.button.url("كود 40 | 500eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_40`)],
-      [Markup.button.url("كود 50 | 550eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_50`)],
-      [Markup.button.url("كود 60 | 590eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_60`)],
-      [Markup.button.url("كود 70 | 690eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_70`)],
-      [Markup.button.url("كود 80 | 790eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_80`)],
-      [Markup.button.url("كود 90 | 880eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_90`)],
-      [Markup.button.url("💎 CODE 100 | 900Eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_CODE_طيارة_100`)],
-      [Markup.button.url("💎 CODE 200 | 1800Eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_CODE_طيارة_200`)],
+      [Markup.button.url("كود 10 | 300eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_10`)],
+      [Markup.button.url("كود 20 | 600eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_20`)],
+      [Markup.button.url("كود 30 | 900eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_30`)],
+      [Markup.button.url("كود 40 | 1100eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_40`)],
+      [Markup.button.url("كود 50 | 1400eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_50`)],
+      [Markup.button.url("كود 60 | 1700eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_60`)],
+      [Markup.button.url("كود 70 | 2000eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_70`)],
+      [Markup.button.url("كود 80 | 2300eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_80`)],
+      [Markup.button.url("كود 90 | 2600eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_طيارة_90`)],
+      [Markup.button.url("💎 CODE 100 | 2800Eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_CODE_طيارة_100`)],
+      [Markup.button.url("💎 CODE 200 | 5600Eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_CODE_طيارة_200`)],
       [Markup.button.callback("🔙 العودة لقائمة الطيارة", "CRASH_SCRIPT_MENU")]
     ])
   );
