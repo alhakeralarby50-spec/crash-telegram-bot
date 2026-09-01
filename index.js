@@ -1,7 +1,7 @@
 const { Telegraf, Markup } = require("telegraf");
 
 // قراءة التوكن الجديد المخفي والمعزول بأمان
-const BOT_TOKEN = process.env.BOT_TOKEN || "8670693662:AAG3gQmrRp9IkPIQbJdYoU4B5ddDwv1Xs5g";
+const BOT_TOKEN = process.env.BOT_TOKEN || "8670693662:AAEjbryVMhrn7DklwYT1heQRFFm1Au5UPQE";
 const bot = new Telegraf(BOT_TOKEN);
 
 const DEVELOPER_USERNAME = "Xcrash0X";
