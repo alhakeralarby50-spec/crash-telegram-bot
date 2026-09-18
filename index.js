@@ -7,15 +7,77 @@ const bot = new Telegraf(BOT_TOKEN);
 const DEVELOPER_USERNAME = "Xcrash0X";
 const CRASH_APP_URL = "https://u3v2dd-1ih6kc9ki-arcadawebapps7.vercel.app/";
 const APPLE_APP_URL = "https://kdk0eo-lydn13p1r-arcadawebapps3.vercel.app/";
+const MATCH_APP_URL = "https://15bae2-me5g9zwfb-arcedawebapps1.vercel.app";
 
 // 1. القائمة الرئيسية عند كتابة /start
 bot.start((ctx) => {
   return ctx.reply(
     "أهلاً بك يا غالي في بوت التوقعات والخدمات! 🎮\nاختر الإسكريبت المطلوب من القائمة أدناه:",
     Markup.inlineKeyboard([
+      [Markup.button.callback("⚽ إسكريبت المباريات (Matches Predictor)", "MATCH_SCRIPT_MENU")],
       [Markup.button.callback("✈️ إسكريبت الطيارة (Crash)", "CRASH_SCRIPT_MENU")],
       [Markup.button.callback("🍎 إسكريبت التفاحة (Apple of Fortune)", "APPLE_SCRIPT_MENU")],
       [Markup.button.callback("👨‍💻 التواصل مع الدعم والإدارة", "CONTACT_SUPPORT")]
+    ])
+  );
+});
+
+// ==================== [ قسم إسكريبت المباريات ] ====================
+
+// قائمة إسكريبت المباريات الرئيسية
+bot.action("MATCH_SCRIPT_MENU", (ctx) => {
+  ctx.answerCbQuery();
+  return ctx.reply(
+    "⚽ **قائمة إسكريبت المباريات (Matches Predictor):**",
+    Markup.inlineKeyboard([
+      [Markup.button.url("🎮 تشغيل تطبيق المباريات (العب الآن)", MATCH_APP_URL)],
+      [Markup.button.callback("💎 باقات الأكواد والأسعار", "buy_codes_match")],
+      [Markup.button.callback("📊 التوقعات والخدمات", "SERVICES_INFO_MATCH")],
+      [Markup.button.callback("ℹ️ تعليمات الاستخدام", "help_info_match")],
+      [Markup.button.callback("🔙 العودة للقائمة الرئيسية", "MAIN_MENU")]
+    ])
+  );
+});
+
+// أسعار إسكريبت المباريات (سعر التوقع = 100 ج)
+bot.action("buy_codes_match", (ctx) => {
+  ctx.answerCbQuery();
+  return ctx.reply(
+    "اختر باقة الأكواد التي تريد شراءها لإسكريبت المباريات (سعر التوقع = 100ج):",
+    Markup.inlineKeyboard([
+      [Markup.button.url("⚽ كود 5 توقعات | 500eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_مباريات_5_توقعات_بـ500ج`)],
+      [Markup.button.url("⚽ كود 10 توقعات | 1000eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_مباريات_10_توقعات_بـ1000ج`)],
+      [Markup.button.url("⚽ كود 15 توقع | 1500eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_مباريات_15_توقع_بـ1500ج`)],
+      [Markup.button.url("⚽ كود 20 توقع | 2000eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_مباريات_20_توقع_بـ2000ج`)],
+      [Markup.button.url("⚽ كود 25 توقع | 2500eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_مباريات_25_توقع_بـ2500ج`)],
+      [Markup.button.url("💎 CODE 30 توقع | 3000eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_مباريات_30_توقع_بـ3000ج`)],
+      [Markup.button.callback("🔙 العودة لقائمة المباريات", "MATCH_SCRIPT_MENU")]
+    ])
+  );
+});
+
+// خدمات وشرح المباريات
+bot.action("SERVICES_INFO_MATCH", (ctx) => {
+  ctx.answerCbQuery();
+  const servicesText = `📊 **مميزات وخدمات إسكريبت المباريات:**\n\n` +
+    `• ربط حي وتلقائي مع نتائج المباريات المباشرة عبر API.\n` +
+    `• إمكانية إضافة وتوقّع دوريات ومباريات السايبر الإلكترونية يدوياً.\n` +
+    `• خوارزمية تحليل متقدمة لمنح أعلى نسبة نجاح لتوقعات المباريات.\n` +
+    `• نظام عداد زمني متطور وحماية للتفعيلات بالأكواد.`;
+
+  return ctx.replyWithMarkdown(servicesText, Markup.inlineKeyboard([
+    [Markup.button.url("🎮 دخول اللعبة الآن", MATCH_APP_URL)],
+    [Markup.button.callback("🔙 العودة لقائمة المباريات", "MATCH_SCRIPT_MENU")]
+  ]));
+});
+
+// تعليمات المباريات
+bot.action("help_info_match", (ctx) => {
+  ctx.answerCbQuery();
+  return ctx.reply(
+    'هذا القسم مخصص لإسكريبت توقعات المباريات. اختر "باقات الأكواد والأسعار" لمعرفة الأسعار المتاحة والتواصل المباشر لشراء كود التفعيل.',
+    Markup.inlineKeyboard([
+      [Markup.button.callback("🔙 العودة لقائمة المباريات", "MATCH_SCRIPT_MENU")]
     ])
   );
 });
@@ -101,7 +163,7 @@ bot.action("APPLE_SCRIPT_MENU", (ctx) => {
   );
 });
 
-// أسعار التفاحة (حساب 20 ج لكل جولة - أقل باقة 10 جولات = 200ج)
+// أسعار التفاحة
 bot.action("buy_codes_apple", (ctx) => {
   ctx.answerCbQuery();
   return ctx.reply(
@@ -110,7 +172,7 @@ bot.action("buy_codes_apple", (ctx) => {
       [Markup.button.url("🍎 كود 10 جولات | 200 Eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_تفاحة_10_جولات_بـ200ج`)],
       [Markup.button.url("🍎 كود 20 جولة | 400 Eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_تفاحة_20_جولة_بـ400ج`)],
       [Markup.button.url("🍎 كود 30 جولة | 600 Eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_تفاحة_30_جولة_بـ600ج`)],
-      [Markup.button.url("🍎 كود 40 جولة | 800 Eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_تفاحة_40_جولة_بـ800ج`)],
+      [Markup.button.url("🍎 كود 40 جولة | 800 Eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_تفاحة_800ج`)],
       [Markup.button.url("🍎 كود 50 جولة | 1000 Eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_تفاحة_50_جولة_بـ1000ج`)],
       [Markup.button.url("💎 CODE 100 جولة | 2000 Eg", `https://t.me/${DEVELOPER_USERNAME}?text=طلب_شراء_كود_تفاحة_100_جولة_بـ2000ج`)],
       [Markup.button.callback("🔙 العودة لقائمة التفاحة", "APPLE_SCRIPT_MENU")]
@@ -162,6 +224,7 @@ bot.action("MAIN_MENU", (ctx) => {
   return ctx.reply(
     "القائمة الرئيسية 🎮:",
     Markup.inlineKeyboard([
+      [Markup.button.callback("⚽ إسكريبت المباريات (Matches Predictor)", "MATCH_SCRIPT_MENU")],
       [Markup.button.callback("✈️ إسكريبت الطيارة (Crash)", "CRASH_SCRIPT_MENU")],
       [Markup.button.callback("🍎 إسكريبت التفاحة (Apple of Fortune)", "APPLE_SCRIPT_MENU")],
       [Markup.button.callback("👨‍💻 التواصل مع الدعم والإدارة", "CONTACT_SUPPORT")]
